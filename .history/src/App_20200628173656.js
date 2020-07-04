@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/home";
 import About from "./components/about";
-import Community from "./components/community";
+import Users from "./components/community";
 function App() {
   return (
     <Router>
@@ -20,7 +20,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/community">Community</Link>
+              <Link to="/about">Community</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
@@ -34,8 +34,8 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/community">
-            <Community />
+          <Route path="/users">
+            <Users />
           </Route>
           <Route path="/">
             <Home />
@@ -44,6 +44,14 @@ function App() {
       </div>
     </Router>
 
+    /* <div className="ml-6 pt-1">
+      <h1 className="text-2xl text-blue-700 leading-tight">
+        Tailwind and Create React App
+      </h1>
+      <p className="text-base text-gray-700 leading-normal">
+        Building apps together
+      </p>      
+    </div> */
   );
 }
 

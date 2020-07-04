@@ -1,29 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./components/home";
-import About from "./components/about";
-import Community from "./components/community";
+
 function App() {
   return (
-    <Router>
-      <div>
+      <Router>
+    <div className="max-w-md mx-auto flex-row p-6 bg-gray-100 mt-10 rounded-lg shadow-xl">
         <nav className="flex-row">
-          {/* <button type="submit" className="px-4 max-w-md justify-start ">login</button> */}
-
-          <ul className="flex justify-evenly max-w-md mx-auto flex p-6 bg-gray-100 mt-10 rounded-lg shadow-xl	">
-            <li>
-              <Link to="/">
-                LOGO
-              </Link>
-            </li>
+          <ul className="flex-column">
             <li>
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/community">Community</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/users">Users</Link>
             </li>
           </ul>
         </nav>
@@ -34,17 +25,35 @@ function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/community">
-            <Community />
+          <Route path="/users">
+            <Users />
           </Route>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
       </div>
-    </Router>
+      </Router>
 
+      /* <div className="ml-6 pt-1">
+      <h1 className="text-2xl text-blue-700 leading-tight">
+        Tailwind and Create React App
+      </h1>
+      <p className="text-base text-gray-700 leading-normal">
+        Building apps together
+      </p>      
+    </div> */
   );
 }
+function Home() {
+  return <h2>Home</h2>;
+}
 
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
+}
 export default App;
